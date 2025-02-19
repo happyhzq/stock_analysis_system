@@ -1,9 +1,9 @@
 # config/config.yaml
 mysql:
-  host: 192.168.0.204
+  host: 
   port: 3306
   user: root
-  password: hzq8822491
+  password: 
   database: stock
 
 api:
