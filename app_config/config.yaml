@@ -1,0 +1,14 @@
+# config/config.yaml
+mysql:
+  host: 192.168.0.204
+  port: 3306
+  user: root
+  password: hzq8822491
+  database: stock
+
+api:
+  edgar:
+    endpoint: https://api.sec.gov/
+    rate_limit: 10/60s
+  yahoo:
+    endpoint: https://yfapi.net/
