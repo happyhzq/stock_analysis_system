@@ -1,20 +1,12 @@
 # data_processor/data_loader.py (核心数据加载)
 import pandas as pd
-from typing import Union, Dict
+from typing import Dict
 from pathlib import Path
 from tenacity import retry, stop_after_attempt, wait_exponential
-
-from models import FinancialReport, Base
+from app_config.config import Config
+from .models import FinancialReport
 from sqlalchemy import create_engine, text, inspect
 from sqlalchemy.orm import sessionmaker
-
-import sys
-import os
-from pathlib import Path
-# 动态计算项目根目录
-current_dir = Path(__file__).parent.absolute()
-root_dir = current_dir.parent.parent  # 根据实际层级调整
-from .app_config.config import Config
 
 class DataLoader:
     def __init__(self):

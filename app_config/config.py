@@ -1,15 +1,14 @@
 # config.py 最终版
 from pathlib import Path
-from typing import Dict
 import yaml
-import os
+
 
 class Config:
     def __init__(self):
         self.base_dir = Path(__file__).parent.parent  # 向上两级到项目根目录
         self._verify_structure()
         self._load_config()
-        
+
     def _verify_structure(self):
         """验证必要目录结构"""
         required = [
@@ -20,8 +19,7 @@ class Config:
         for path in required:
             if not path.exists():
                 raise RuntimeError(f"缺失关键目录: {path}")
-                
-            
+ 
     @property
     def log_path(self):
         return self.base_dir / 'logs' / 'msscore.log'   
@@ -29,7 +27,7 @@ class Config:
         config_path = self.base_dir / 'app_config' / 'config.yaml'
         with open(config_path) as f:
             self.settings = yaml.safe_load(f)
-            
+
         # MySQL配置
         db_config = self.settings['mysql']
         self.DB_URI = (
@@ -37,9 +35,10 @@ class Config:
             f"@{db_config['host']}:{db_config['port']}/{db_config['database']}"
             f"?charset=utf8mb4&autocommit=false"
         )
-        
+
         # 其他配置
         self.API_CONFIG = self.settings.get('api', {})
+
 
 config = Config()
 
@@ -55,3 +54,4 @@ try:
 except Exception as e:
     print(f"❌ 连接失败: {str(e)}")
     print("请检查：\n1. MySQL服务状态\n2. 防火墙设置\n3. 用户权限\n4. 环境变量配置")
+    
