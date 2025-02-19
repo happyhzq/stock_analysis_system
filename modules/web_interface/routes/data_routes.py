@@ -1,4 +1,4 @@
-# web_interface/routes/data_routes.py
+# modules/web_interface/routes/data_routes.py
 from flask_restx import Namespace, Resource, fields
 from data_processor.data_loader import DataLoader
 

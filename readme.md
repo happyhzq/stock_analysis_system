@@ -3,7 +3,10 @@ stock_analysis_system/
 ├── config/                   # 配置中心
 │   ├── __init__.py
 │   ├── config.py             # 配置加载器
-│   └── config.yaml           # 主配置文件
+│   ├── config.yaml           # 主配置文件
+│   ├── data
+│   └── logs
+│       └── msscore.log
 │
 ├── modules/
 │   ├── data_processor/       # 数据模块
@@ -39,7 +42,8 @@ stock_analysis_system/
 │       ├── __init__.py
 │       ├── advisor.py        # 核心建议生成
 │       ├── risk_assessment.py
-│       ├── compliance.py     # 合规检查
+│       ├── compliance_checker.py     # 合规检查
+│       ├── test_investment_advisor.py
 │       └── models.py         # 数据模型
 │
 ├── tests/                    # 测试套件

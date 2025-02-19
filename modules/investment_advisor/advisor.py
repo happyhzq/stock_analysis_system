@@ -1,3 +1,4 @@
+## modules/investment_advisor/advisor.py
 from typing import List
 from app_config.config import Config
 from .models import InvestmentRecommendation, RiskAssessment

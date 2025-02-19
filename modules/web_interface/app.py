@@ -1,4 +1,4 @@
-# web_interface/app.py (Flask API)
+# modules/web_interface/app.py (Flask API)
 from flask import Flask, jsonify, request
 from flask_socketio import SocketIO
 from typing import Dict

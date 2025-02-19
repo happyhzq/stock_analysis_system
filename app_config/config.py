@@ -1,4 +1,4 @@
-# config.py 最终版
+# app_config/config.py 最终版
 from pathlib import Path
 import yaml
 
